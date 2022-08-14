@@ -1,7 +1,9 @@
 package com.checkconsulting.order.resources;
 
+import com.checkconsulting.order.dto.OrderDto;
 import com.checkconsulting.order.model.Orders;
 import com.checkconsulting.order.services.OrderService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,8 +21,8 @@ public class OrderController {
     }
 
     @GetMapping("orders")
-    public List<Orders> getAllOrders() {
-        return orderService.getAllOrders();
+    public ResponseEntity<List<OrderDto>>  getAllOrders() {
+        return ResponseEntity.ok(orderService.getAllOrders());
     }
 
 }

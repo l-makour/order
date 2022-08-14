@@ -1,7 +1,9 @@
 package com.checkconsulting.order;
 
 
+import com.checkconsulting.order.dto.OrderDto;
 import com.checkconsulting.order.model.Orders;
+import com.checkconsulting.order.model.Status;
 import com.checkconsulting.order.repository.OrderRepository;
 import com.checkconsulting.order.services.OrderService;
 import org.junit.jupiter.api.Assertions;
@@ -29,7 +31,7 @@ public class OrderServiceTest {
         Orders order = Orders.builder()
                 .id(1)
                 .productId(1)
-                .status("Status VO")
+                .status(Status.PAYE)
                 .sourceCustomer(0)
                 .targetCustomer(0)
                 .orderDate(LocalDateTime.now())
@@ -43,10 +45,10 @@ public class OrderServiceTest {
         //When
 
         OrderService orderService = new OrderService(orderRepository);
-        List<Orders> result = orderService.getAllOrders();
+        List<OrderDto> result = orderService.getAllOrders();
 
         //then
-        Assertions.assertEquals(result.size(), 2);
+        Assertions.assertEquals(result.size(), 1);
     }
 
 }

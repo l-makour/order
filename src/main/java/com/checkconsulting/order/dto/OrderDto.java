@@ -1,25 +1,19 @@
-package com.checkconsulting.order.model;
-
+package com.checkconsulting.order.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Orders {
-    @Id
-    private Integer id;
+public class OrderDto {
     private Integer productId;
-    @Enumerated(EnumType.STRING)
-    private Status status;
+    private String status;
     private Integer sourceCustomer;
     private Integer targetCustomer;
     private LocalDateTime orderDate;
