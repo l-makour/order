@@ -7,7 +7,6 @@ import com.checkconsulting.order.model.Status;
 import com.checkconsulting.order.repository.OrderRepository;
 import com.checkconsulting.order.services.OrderService;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
