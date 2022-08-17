@@ -33,12 +33,12 @@ node {
         }
         stage("deploiement"){
             try{
-                sh "sudo docker stop orders"
-                sh "sudo docker rm orders"
-                sh "sudo docker run --name orders -d -p 8082:8089 hsdahmane/orders:1.0"
+                sh "sudo docker stop order"
+                sh "sudo docker rm order"
+                sh "sudo docker run --name order -d -p 8082:8089 hsdahmane/orders:1.0"
             }
             catch(Exception e){
-                sh "sudo docker run --name orders -d -p 8082:8089 hsdahmane/orders:1.0"
+                sh "sudo docker run --name order -d -p 8082:8089 hsdahmane/orders:1.0"
             }
         }
     }
