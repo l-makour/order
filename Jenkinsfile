@@ -37,7 +37,7 @@ node {
                 sh "sudo docker rm orders"
                 sh "sudo docker run --name orders -d -p 8082:8089 hsdahmane/orders:1.0"
             }
-            catch{
+            catch(Exception e){
                 sh "sudo docker run --name orders -d -p 8082:8089 hsdahmane/orders:1.0"
             }
         }
